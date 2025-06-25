@@ -3,726 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NextView IPTV - Premium Streaming Service</title>
+  <title>NextView IPTV - Complete Pages</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    /* Reset CSS */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    :root {
-      --primary: #1a73e8;
-      --secondary: #0d47a1;
-      --accent: #ff5722;
-      --dark: #121212;
-      --light: #f8f9fa;
-      --gray: #5f6368;
-      --success: #34a853;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: #f0f2f5;
-      color: #333;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
-
-    /* Header Styles */
-    .main-header {
-      background-color: var(--dark);
-      color: #fff;
-      padding: 15px 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo i {
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
-
-    .nav-links a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1rem;
-      transition: color 0.3s;
-      padding: 8px 0;
-      position: relative;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: var(--accent);
-      transition: width 0.3s;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .mobile-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, rgba(13, 71, 161, 0.9), rgba(26, 115, 232, 0.9)),
-                  url('https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
-      color: #fff;
-      padding: 100px 0;
-      text-align: center;
-      position: relative;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .hero h2 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      font-size: 1.1rem;
-      cursor: pointer;
-      border: none;
-      text-align: center;
-    }
-
-    .btn-primary {
-      background-color: var(--accent);
-      color: white;
-      box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);
-    }
-
-    .btn-primary:hover {
-      background-color: #e64a19;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
-    }
-
-    /* Features Section */
-    .features {
-      padding: 80px 0;
-      background-color: #fff;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-title h3 {
-      font-size: 2.2rem;
-      color: var(--dark);
-      margin-bottom: 15px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-title h3::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background-color: var(--accent);
-    }
-
-    .section-title p {
-      color: var(--gray);
-      max-width: 600px;
-      margin: 20px auto 0;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    .feature-box {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .feature-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .feature-icon {
-      font-size: 3rem;
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
-
-    .feature-box h4 {
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-      color: var(--dark);
-    }
-
-    .feature-box p {
-      color: var(--gray);
-      font-size: 1rem;
-    }
-
-    /* Pricing Section */
-    .pricing {
-      padding: 80px 0;
-      background-color: #f8f9fa;
-    }
-
-    .plans-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    .plan-card {
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-      position: relative;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .plan-card:hover {
-      transform: translateY(-10px);
-    }
-
-    .plan-header {
-      background-color: var(--primary);
-      color: white;
-      padding: 25px 20px;
-      text-align: center;
-    }
-
-    .plan-card.popular .plan-header {
-      background-color: var(--accent);
-    }
-
-    .plan-card.popular::after {
-      content: 'MOST POPULAR';
-      position: absolute;
-      top: 15px;
-      right: -30px;
-      background-color: var(--accent);
-      color: white;
-      padding: 5px 30px;
-      transform: rotate(45deg);
-      font-size: 0.8rem;
-      font-weight: bold;
-    }
-
-    .plan-header h3 {
-      font-size: 1.6rem;
-      margin-bottom: 5px;
-    }
-
-    .plan-price {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin: 10px 0;
-    }
-
-    .plan-price span {
-      font-size: 1rem;
-      font-weight: normal;
-    }
-
-    .plan-details {
-      padding: 30px;
-    }
-
-    .plan-features {
-      list-style: none;
-      margin-bottom: 30px;
-    }
-
-    .plan-features li {
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .plan-features li:last-child {
-      border-bottom: none;
-    }
-
-    .plan-features li i {
-      color: var(--success);
-    }
-
-    /* Payment Section */
-    .payment-section {
-      padding: 60px 0;
-      background-color: white;
-      text-align: center;
-    }
-    
-    .payment-methods {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-    
-    .payment-method {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 200px;
-    }
-    
-    .payment-icon {
-      font-size: 3.5rem;
-      color: #253b80;
-      margin-bottom: 15px;
-    }
-    
-    .whatsapp-section {
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      color: white;
-      padding: 80px 0;
-      text-align: center;
-    }
-    
-    .whatsapp-container {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    .whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background-color: white;
-      color: #25D366;
-      padding: 15px 35px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.2rem;
-      margin-top: 30px;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-    
-    .whatsapp-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    /* CTA Section */
-    .cta {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 80px 0;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .cta p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto 30px;
-    }
-
-    .btn-light {
-      background-color: white;
-      color: var(--primary);
-      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-    }
-
-    .btn-light:hover {
-      background-color: #f0f0f0;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-    }
-
-    /* Testimonials */
-    .testimonials {
-      padding: 80px 0;
-      background-color: #fff;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .testimonial {
-      background: #f8f9fa;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .testimonial-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .testimonial-avatar {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      background-color: var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-right: 15px;
-    }
-
-    .testimonial-info h4 {
-      font-size: 1.2rem;
-      margin-bottom: 5px;
-    }
-
-    .testimonial-info p {
-      color: var(--gray);
-      font-size: 0.9rem;
-    }
-
-    .testimonial-rating {
-      color: #ffc107;
-      margin-bottom: 15px;
-    }
-
-    /* FAQ Section */
-    .faq {
-      padding: 80px 0;
-      background-color: #f8f9fa;
-    }
-
-    .faq-container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .faq-item {
-      margin-bottom: 20px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .faq-question {
-      background-color: white;
-      padding: 20px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .faq-answer {
-      background-color: #fff;
-      padding: 0 20px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-    }
-
-    .faq-answer p {
-      padding: 20px 0;
-      border-top: 1px solid #eee;
-    }
-
-    .faq-item.active .faq-answer {
-      max-height: 500px;
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--dark);
-      color: white;
-      padding: 60px 0 20px;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      margin-bottom: 40px;
-    }
-
-    .footer-logo {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .footer-logo i {
-      color: var(--accent);
-    }
-
-    .footer-about p {
-      margin-bottom: 20px;
-      color: #aaa;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 15px;
-    }
-
-    .social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      color: white;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-
-    .social-links a:hover {
-      background-color: var(--accent);
-    }
-
-    .footer-links h4 {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      position: relative;
-      padding-bottom: 10px;
-    }
-
-    .footer-links h4::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 2px;
-      background-color: var(--accent);
-    }
-
-    .footer-links ul {
-      list-style: none;
-    }
-
-    .footer-links li {
-      margin-bottom: 12px;
-    }
-
-    .footer-links a {
-      color: #aaa;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-
-    .footer-contact p {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 15px;
-      color: #aaa;
-    }
-
-    .footer-whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background-color: #25D366;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 500;
-      margin-top: 10px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .footer-whatsapp-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-    }
-
-    .copyright {
-      text-align: center;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: #aaa;
-      font-size: 0.9rem;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 992px) {
-      .hero h2 {
-        font-size: 2.3rem;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .mobile-toggle {
-        display: block;
-      }
-      
-      .nav-links {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 80%;
-        height: calc(100vh - 70px);
-        background-color: var(--dark);
-        flex-direction: column;
-        align-items: center;
-        padding: 40px 0;
-        transition: left 0.3s ease;
-        gap: 25px;
-      }
-      
-      .nav-links.active {
-        left: 0;
-      }
-      
-      .hero {
-        padding: 80px 0;
-      }
-      
-      .hero h2 {
-        font-size: 2rem;
-      }
-      
-      .hero p {
-        font-size: 1.1rem;
-      }
-      
-      .section-title h3 {
-        font-size: 1.8rem;
-      }
-      
-      .payment-methods {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .hero h2 {
-        font-size: 1.8rem;
-      }
-      
-      .hero p {
-        font-size: 1rem;
-      }
-      
-      .btn {
-        padding: 12px 25px;
-        font-size: 1rem;
-      }
-      
-      .plan-card.popular::after {
-        right: -35px;
-        font-size: 0.7rem;
-        padding: 4px 25px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Header -->
@@ -741,307 +24,205 @@
           <li><a href="about.html">About</a></li>
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="resources.html">Resources</a></li>
           <li><a href="https://wa.me/212644680614" class="btn-primary" target="_blank" style="padding: 8px 20px;">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h2>Unlimited Streaming. Anytime. Anywhere.</h2>
-        <p>Enjoy thousands of TV channels, movies, and sports in HD & 4K. No buffering, instant activation!</p>
-        <a href="pricing.html" class="btn btn-primary">Subscribe Now</a>
+  <!-- Home Page Content -->
+  <section id="home">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h2>Unlimited Streaming. Anytime. Anywhere.</h2>
+          <p>Enjoy thousands of TV channels, movies, and sports in HD & 4K. No buffering, instant activation!</p>
+          <a href="pricing.html" class="btn btn-primary">Subscribe Now</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Features Section -->
-  <section class="features">
-    <div class="container">
-      <div class="section-title">
-        <h3>Why Choose NextView IPTV?</h3>
-        <p>Premium service with exceptional features to enhance your viewing experience</p>
+    <!-- Features Section -->
+    <section class="features">
+      <div class="container">
+        <div class="section-title">
+          <h3>Why Choose NextView IPTV?</h3>
+          <p>Premium service with exceptional features to enhance your viewing experience</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-hd"></i>
+            </div>
+            <h4>HD & 4K Channels</h4>
+            <p>Enjoy top-quality video streaming from worldwide channels with crystal-clear resolution.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h4>Instant Activation</h4>
+            <p>Get access to your subscription within minutes after payment with no waiting time.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-tags"></i>
+            </div>
+            <h4>Affordable Plans</h4>
+            <p>3 months for $15, 6 months for $25, and 12 months for $35 only. Premium quality at budget price.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h4>24/7 Support</h4>
+            <p>We are always available to help you via WhatsApp or email with quick response times.</p>
+          </div>
+        </div>
       </div>
-      <div class="features-grid">
-        <div class="feature-box">
-          <div class="feature-icon">
-            <i class="fas fa-hd"></i>
-          </div>
-          <h4>HD & 4K Channels</h4>
-          <p>Enjoy top-quality video streaming from worldwide channels with crystal-clear resolution.</p>
-        </div>
-        <div class="feature-box">
-          <div class="feature-icon">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <h4>Instant Activation</h4>
-          <p>Get access to your subscription within minutes after payment with no waiting time.</p>
-        </div>
-        <div class="feature-box">
-          <div class="feature-icon">
-            <i class="fas fa-tags"></i>
-          </div>
-          <h4>Affordable Plans</h4>
-          <p>3 months for $15, 6 months for $25, and 12 months for $35 only. Premium quality at budget price.</p>
-        </div>
-        <div class="feature-box">
-          <div class="feature-icon">
-            <i class="fas fa-headset"></i>
-          </div>
-          <h4>24/7 Support</h4>
-          <p>We are always available to help you via WhatsApp or email with quick response times.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Pricing Section -->
-  <section class="pricing">
-    <div class="container">
-      <div class="section-title">
-        <h3>Flexible Pricing Plans</h3>
-        <p>Choose the perfect plan for your entertainment needs</p>
-      </div>
-      <div class="plans-grid">
-        <div class="plan-card">
-          <div class="plan-header">
-            <h3>3 Months</h3>
-            <div class="plan-price">$15</div>
-            <p>Perfect for short-term viewing</p>
-          </div>
-          <div class="plan-details">
-            <ul class="plan-features">
-              <li><i class="fas fa-check"></i> 10,000+ Channels</li>
-              <li><i class="fas fa-check"></i> HD & 4K Quality</li>
-              <li><i class="fas fa-check"></i> 30,000+ VOD</li>
-              <li><i class="fas fa-check"></i> 24/7 Support</li>
-              <li><i class="fas fa-check"></i> 3 Devices</li>
-            </ul>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick">
-              <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID_3MONTHS">
-              <input type="submit" value="Buy Now" class="btn btn-primary" name="submit" title="PayPal - The safer, easier way to pay online!">
-            </form>
-          </div>
-        </div>
-        
-        <div class="plan-card popular">
-          <div class="plan-header">
-            <h3>6 Months</h3>
-            <div class="plan-price">$25</div>
-            <p>Best value package</p>
-          </div>
-          <div class="plan-details">
-            <ul class="plan-features">
-              <li><i class="fas fa-check"></i> 15,000+ Channels</li>
-              <li><i class="fas fa-check"></i> HD & 4K Quality</li>
-              <li><i class="fas fa-check"></i> 50,000+ VOD</li>
-              <li><i class="fas fa-check"></i> Premium Support</li>
-              <li><i class="fas fa-check"></i> 5 Devices</li>
-              <li><i class="fas fa-check"></i> Catch-up TV</li>
-            </ul>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick">
-              <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID_6MONTHS">
-              <input type="submit" value="Buy Now" class="btn btn-primary" name="submit" title="PayPal - The safer, easier way to pay online!">
-            </form>
-          </div>
-        </div>
-        
-        <div class="plan-card">
-          <div class="plan-header">
-            <h3>12 Months</h3>
-            <div class="plan-price">$35</div>
-            <p>Ultimate entertainment package</p>
-          </div>
-          <div class="plan-details">
-            <ul class="plan-features">
-              <li><i class="fas fa-check"></i> 20,000+ Channels</li>
-              <li><i class="fas fa-check"></i> HD & 4K Quality</li>
-              <li><i class="fas fa-check"></i> 80,000+ VOD</li>
-              <li><i class="fas fa-check"></i> Priority Support</li>
-              <li><i class="fas fa-check"></i> 8 Devices</li>
-              <li><i class="fas fa-check"></i> Catch-up TV</li>
-              <li><i class="fas fa-check"></i> Exclusive Channels</li>
-            </ul>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick">
-              <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID_12MONTHS">
-              <input type="submit" value="Buy Now" class="btn btn-primary" name="submit" title="PayPal - The safer, easier way to pay online!">
-            </form>
-          </div>
+    <!-- WhatsApp Section -->
+    <section class="whatsapp-section">
+      <div class="container">
+        <div class="whatsapp-container">
+          <h2>24/7 Customer Support</h2>
+          <p>Our team is always ready to assist you with any questions or issues you may have. Contact us directly on WhatsApp for instant support.</p>
+          <a href="https://wa.me/212644680614" class="whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp: +212644680614
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Payment Section -->
-  <section class="payment-section">
-    <div class="container">
-      <div class="section-title">
-        <h3>Secure Payment Methods</h3>
-        <p>We offer safe and secure payment options for your convenience</p>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h3>What Our Customers Say</h3>
+          <p>Join thousands of satisfied customers worldwide</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">MJ</div>
+              <div class="testimonial-info">
+                <h4>Mohamed J.</h4>
+                <p>Premium Subscriber</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>"The picture quality is exceptional and the channel selection is massive. Customer service is responsive and helpful. Highly recommended!"</p>
+          </div>
+          
+          <div class="testimonial">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">AS</div>
+              <div class="testimonial-info">
+                <h4>Aisha S.</h4>
+                <p>Family Plan User</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p>"We\\\\'ve been using NextView for 6 months now and it\\\\'s been flawless. The multi-device support is perfect for our family. Great value for money!"</p>
+          </div>
+          
+          <div class="testimonial">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">RK</div>
+              <div class="testimonial-info">
+                <h4>Robert K.</h4>
+                <p>Sports Enthusiast</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>"As a sports fan, I\\\\'m blown away by the coverage. All major leagues, HD quality with no buffering. The 4K sports channels are amazing!"</p>
+          </div>
+        </div>
       </div>
-      <div class="payment-methods">
-        <div class="payment-method">
-          <i class="fab fa-paypal payment-icon"></i>
-          <h4>PayPal</h4>
-          <p>Safe and secure payment processing</p>
-        </div>
-        <div class="payment-method">
-          <i class="fab fa-cc-visa payment-icon" style="color: #1a1f71;"></i>
-          <h4>Credit/Debit Cards</h4>
-          <p>Visa, Mastercard, American Express</p>
-        </div>
-        <div class="payment-method">
-          <i class="fab fa-bitcoin payment-icon" style="color: #f2a900;"></i>
-          <h4>Cryptocurrency</h4>
-          <p>Bitcoin, Ethereum, USDT</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- WhatsApp Section -->
-  <section class="whatsapp-section">
-    <div class="container">
-      <div class="whatsapp-container">
-        <h2>24/7 Customer Support</h2>
-        <p>Our team is always ready to assist you with any questions or issues you may have. Contact us directly on WhatsApp for instant support.</p>
-        <a href="https://wa.me/212644680614" class="whatsapp-btn" target="_blank">
-          <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="testimonials">
-    <div class="container">
-      <div class="section-title">
-        <h3>What Our Customers Say</h3>
-        <p>Join thousands of satisfied customers worldwide</p>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial">
-          <div class="testimonial-header">
-            <div class="testimonial-avatar">MJ</div>
-            <div class="testimonial-info">
-              <h4>Mohamed J.</h4>
-              <p>Premium Subscriber</p>
+    <!-- FAQ Section -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-title">
+          <h3>Frequently Asked Questions</h3>
+          <p>Find answers to common questions about our service</p>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What devices are supported?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>NextView IPTV works on all major devices including Smart TVs (Samsung, LG, Android TV), set-top boxes (Formuler, MAG), streaming devices (Amazon Fire Stick, NVIDIA Shield), mobile devices (Android, iOS), and computers (Windows, Mac).</p>
             </div>
           </div>
-          <div class="testimonial-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <p>"The picture quality is exceptional and the channel selection is massive. Customer service is responsive and helpful. Highly recommended!"</p>
-        </div>
-        
-        <div class="testimonial">
-          <div class="testimonial-header">
-            <div class="testimonial-avatar">AS</div>
-            <div class="testimonial-info">
-              <h4>Aisha S.</h4>
-              <p>Family Plan User</p>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How quickly will I get access after payment?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We provide instant activation for most payment methods. You\\\\'ll typically receive your login credentials within 5-10 minutes after payment confirmation. For PayPal payments, activation is immediate upon successful payment.</p>
             </div>
           </div>
-          <div class="testimonial-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-          </div>
-          <p>"We've been using NextView for 6 months now and it's been flawless. The multi-device support is perfect for our family. Great value for money!"</p>
-        </div>
-        
-        <div class="testimonial">
-          <div class="testimonial-header">
-            <div class="testimonial-avatar">RK</div>
-            <div class="testimonial-info">
-              <h4>Robert K.</h4>
-              <p>Sports Enthusiast</p>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What payment methods do you accept?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We accept all major credit/debit cards through PayPal. We also accept direct bank transfers and cryptocurrency (Bitcoin, Ethereum) for added privacy. Contact us for alternative payment options.</p>
             </div>
           </div>
-          <div class="testimonial-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Do you offer free trials?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>We offer a 24-hour trial for $1 to verify our service quality and compatibility with your devices. This nominal fee helps prevent abuse of our trial system while giving you full access to evaluate our service.</p>
+            </div>
           </div>
-          <p>"As a sports fan, I'm blown away by the coverage. All major leagues, HD quality with no buffering. The 4K sports channels are amazing!"</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="faq">
-    <div class="container">
-      <div class="section-title">
-        <h3>Frequently Asked Questions</h3>
-        <p>Find answers to common questions about our service</p>
-      </div>
-      <div class="faq-container">
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>What devices are supported?</span>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>NextView IPTV works on all major devices including Smart TVs (Samsung, LG, Android TV), set-top boxes (Formuler, MAG), streaming devices (Amazon Fire Stick, NVIDIA Shield), mobile devices (Android, iOS), and computers (Windows, Mac).</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>How quickly will I get access after payment?</span>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>We provide instant activation for most payment methods. You'll typically receive your login credentials within 5-10 minutes after payment confirmation. For PayPal payments, activation is immediate upon successful payment.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>What payment methods do you accept?</span>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>We accept all major credit/debit cards through PayPal. We also accept direct bank transfers and cryptocurrency (Bitcoin, Ethereum) for added privacy. Contact us for alternative payment options.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>Do you offer free trials?</span>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>We offer a 24-hour trial for $1 to verify our service quality and compatibility with your devices. This nominal fee helps prevent abuse of our trial system while giving you full access to evaluate our service.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <div class="faq-question">
-            <span>How can I contact customer support?</span>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Our customer support team is available 24/7 via WhatsApp at +212644680614. You can also reach us by email at support@nextviewiptv.com. Average response time is under 15 minutes during peak hours.</p>
+          
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How can I contact customer support?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Our customer support team is available 24/7 via WhatsApp at +212644680614. You can also reach us by email at support@nextviewiptv.com. Average response time is under 15 minutes during peak hours.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </section>
 
   <!-- Footer -->
@@ -1076,11 +257,11 @@
         <div class="footer-links">
           <h4>Resources</h4>
           <ul>
-            <li><a href="setup.html">Setup Guides</a></li>
-            <li><a href="channels.html">Channel List</a></li>
-            <li><a href="troubleshooting.html">Troubleshooting</a></li>
-            <li><a href="blog.html">IPTV Blog</a></li>
-            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="resources.html">Setup Guides</a></li>
+            <li><a href="resources.html">Channel List</a></li>
+            <li><a href="resources.html">Troubleshooting</a></li>
+            <li><a href="resources.html">IPTV Blog</a></li>
+            <li><a href="resources.html">FAQ</a></li>
           </ul>
         </div>
         
@@ -1101,30 +282,7 @@
     </div>
   </footer>
 
-  <script>
-    // Mobile navigation toggle
-    document.getElementById('mobileToggle').addEventListener('click', function() {
-      document.getElementById('navLinks').classList.toggle('active');
-    });
-    
-    // FAQ accordion functionality
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-question');
-      question.addEventListener('click', () => {
-        item.classList.toggle('active');
-      });
-    });
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
+
