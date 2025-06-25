@@ -1,0 +1,29 @@
+- [ ] Phase 1: Analyser le code et créer la structure du projet
+  - [x] Créer le répertoire du projet `nextview_iptv`
+  - [x] Initialiser le fichier `todo.md`
+  - [x] Analyser le code HTML fourni pour identifier les sections et les dépendances.
+  - [x] Définir la structure des fichiers (index.html, about.html, privacy.html, terms.html, resources.html, style.css, script.js).
+- [ ] Phase 2: Créer un fichier CSS séparé
+  - [x] Extraire tout le CSS du code HTML et le sauvegarder dans `style.css`.
+  - [x] Mettre à jour le fichier HTML principal pour lier `style.css`.
+- [ ] Phase 3: Créer un fichier JavaScript séparé
+  - [x] Extraire tout le JavaScript du code HTML et le sauvegarder dans `script.js`.
+  - [x] Mettre à jour le fichier HTML principal pour lier `script.js`.
+- [ ] Phase 4: Créer des fichiers HTML séparés pour chaque page
+  - [x] Extraire la section 'Home Page' dans `index.html`.
+  - [x] Extraire la section 'About Us Page' dans `about.html`.
+  - [x] Extraire la section 'Privacy Policy Page' dans `privacy.html`.
+  - [x] Extraire la section 'Terms of Service Page' dans `terms.html`.
+  - [x] Extraire la section 'Resources Page' dans `resources.html`.
+  - [x] S'assurer que chaque fichier HTML inclut l'en-tête et le pied de page.
+  - [x] Mettre à jour les liens de navigation pour pointer vers les nouveaux fichiers HTML.
+- [ ] Phase 5: Créer un fichier HTML principal mis à jour
+  - [x] Créer un `index.html` qui inclut l'en-tête, le pied de page et le contenu de la page d'accueil.
+  - [x] S'assurer que tous les liens de navigation fonctionnent correctement.
+- [ ] Phase 6: Créer un fichier pricing.html et mettre à jour les liens de navigation
+  - [x] Créer un fichier `pricing.html` avec le contenu approprié.
+  - [x] Mettre à jour tous les fichiers HTML pour inclure le lien vers `pricing.html` dans la navigation.
+- [ ] Phase 7: Livrer les fichiers à l'utilisateur
+  - [ ] Compresser tous les fichiers dans une archive ZIP.
+  - [ ] Envoyer l'archive ZIP à l'utilisateur.
+
