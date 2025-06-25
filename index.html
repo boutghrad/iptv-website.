@@ -334,6 +334,67 @@
       color: var(--success);
     }
 
+    /* Payment Section */
+    .payment-section {
+      padding: 60px 0;
+      background-color: white;
+      text-align: center;
+    }
+    
+    .payment-methods {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .payment-method {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 200px;
+    }
+    
+    .payment-icon {
+      font-size: 3.5rem;
+      color: #253b80;
+      margin-bottom: 15px;
+    }
+    
+    .whatsapp-section {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .whatsapp-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: white;
+      color: #25D366;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-top: 30px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .whatsapp-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
     /* CTA Section */
     .cta {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -562,7 +623,7 @@
       color: #aaa;
     }
 
-    .whatsapp-btn {
+    .footer-whatsapp-btn {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -576,7 +637,7 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .whatsapp-btn:hover {
+    .footer-whatsapp-btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
     }
@@ -634,6 +695,11 @@
       .section-title h3 {
         font-size: 1.8rem;
       }
+      
+      .payment-methods {
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
     @media (max-width: 576px) {
@@ -675,7 +741,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="privacy.html">Privacy</a></li>
-          <li><a href="https://wa.me/212XXXXXXXXX" class="btn-primary" target="_blank" style="padding: 8px 20px;">Contact</a></li>
+          <li><a href="https://wa.me/212644680614" class="btn-primary" target="_blank" style="padding: 8px 20px;">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -754,7 +820,11 @@
               <li><i class="fas fa-check"></i> 24/7 Support</li>
               <li><i class="fas fa-check"></i> 3 Devices</li>
             </ul>
-            <a href="#" class="btn btn-primary">Select Plan</a>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID_3MONTHS">
+              <input type="submit" value="Buy Now" class="btn btn-primary" name="submit" title="PayPal - The safer, easier way to pay online!">
+            </form>
           </div>
         </div>
         
@@ -773,7 +843,11 @@
               <li><i class="fas fa-check"></i> 5 Devices</li>
               <li><i class="fas fa-check"></i> Catch-up TV</li>
             </ul>
-            <a href="#" class="btn btn-primary">Select Plan</a>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID_6MONTHS">
+              <input type="submit" value="Buy Now" class="btn btn-primary" name="submit" title="PayPal - The safer, easier way to pay online!">
+            </form>
           </div>
         </div>
         
@@ -793,19 +867,54 @@
               <li><i class="fas fa-check"></i> Catch-up TV</li>
               <li><i class="fas fa-check"></i> Exclusive Channels</li>
             </ul>
-            <a href="#" class="btn btn-primary">Select Plan</a>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+              <input type="hidden" name="cmd" value="_s-xclick">
+              <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID_12MONTHS">
+              <input type="submit" value="Buy Now" class="btn btn-primary" name="submit" title="PayPal - The safer, easier way to pay online!">
+            </form>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="cta">
+  <!-- Payment Section -->
+  <section class="payment-section">
     <div class="container">
-      <h2>Ready to start streaming?</h2>
-      <p>Subscribe today and experience premium IPTV service with unbeatable quality and support</p>
-      <a href="pricing.html" class="btn btn-light">Get Started Now</a>
+      <div class="section-title">
+        <h3>Secure Payment Methods</h3>
+        <p>We offer safe and secure payment options for your convenience</p>
+      </div>
+      <div class="payment-methods">
+        <div class="payment-method">
+          <i class="fab fa-paypal payment-icon"></i>
+          <h4>PayPal</h4>
+          <p>Safe and secure payment processing</p>
+        </div>
+        <div class="payment-method">
+          <i class="fab fa-cc-visa payment-icon" style="color: #1a1f71;"></i>
+          <h4>Credit/Debit Cards</h4>
+          <p>Visa, Mastercard, American Express</p>
+        </div>
+        <div class="payment-method">
+          <i class="fab fa-bitcoin payment-icon" style="color: #f2a900;"></i>
+          <h4>Cryptocurrency</h4>
+          <p>Bitcoin, Ethereum, USDT</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WhatsApp Section -->
+  <section class="whatsapp-section">
+    <div class="container">
+      <div class="whatsapp-container">
+        <h2>24/7 Customer Support</h2>
+        <p>Our team is always ready to assist you with any questions or issues you may have. Contact us directly on WhatsApp for instant support.</p>
+        <a href="https://wa.me/212644680614" class="whatsapp-btn" target="_blank">
+          <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+        </a>
+      </div>
     </div>
   </section>
 
@@ -928,7 +1037,7 @@
             <i class="fas fa-chevron-down"></i>
           </div>
           <div class="faq-answer">
-            <p>Our customer support team is available 24/7 via WhatsApp at +212-XXX-XXXXXX. You can also reach us by email at support@nextviewiptv.com. Average response time is under 15 minutes during peak hours.</p>
+            <p>Our customer support team is available 24/7 via WhatsApp at +212644680614. You can also reach us by email at support@nextviewiptv.com. Average response time is under 15 minutes during peak hours.</p>
           </div>
         </div>
       </div>
@@ -978,9 +1087,9 @@
         <div class="footer-contact">
           <h4>Contact Us</h4>
           <p><i class="fas fa-envelope"></i> support@nextviewiptv.com</p>
-          <p><i class="fas fa-phone"></i> +212-XXX-XXXXXX</p>
+          <p><i class="fas fa-phone"></i> +212644680614</p>
           <p><i class="fas fa-map-marker-alt"></i> Casablanca, Morocco</p>
-          <a href="https://wa.me/212XXXXXXXXX" class="whatsapp-btn" target="_blank">
+          <a href="https://wa.me/212644680614" class="footer-whatsapp-btn" target="_blank">
             <i class="fab fa-whatsapp"></i> WhatsApp Support
           </a>
         </div>
